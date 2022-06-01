@@ -1,6 +1,8 @@
 import React from "react";
 import { IoMdSend } from "react-icons/io";
 import styled from "styled-components";
+import { mobile } from "../responsive";
+
 
 const Container = styled.div`
   height: 60vh;
@@ -19,6 +21,7 @@ const Desc = styled.p`
   font-size: 24px;
   font-weight: 300;
   margin-bottom: 20px;
+  ${mobile({ textAlign: "center" })}
 `;
 const InputContainer = styled.div`
   width: 50%;
@@ -27,10 +30,12 @@ const InputContainer = styled.div`
   display: flex;
   justify-content: space-between;
   border: 1px solid lightgray;
+  ${mobile({ width: "80%" })}
 `;
 const Input = styled.input`
   border: none;
   flex: 8;
+  color: gray;
   padding-left: 20px;
 `;
 const Button = styled.button`
@@ -46,8 +51,8 @@ const Newsletter = () => {
     <Container>
       <Title>Newsletter</Title>
       <Desc>Get timely updates from favorite products.</Desc>
-      <InputContainer placeholder="Your Email">
-        <Input />
+      <InputContainer >
+        <Input placeholder="Your Email"/>
         <Button>
           <IoMdSend size={20} />
         </Button>
